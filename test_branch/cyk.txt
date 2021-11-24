@@ -1,2 +1,2 @@
 Cyk txt zebvy przetestowach branche bug_fix
-Kolejny commit, test merge
+Kolejny commit, test merge -from bug_fix branch
