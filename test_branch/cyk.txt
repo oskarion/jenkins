@@ -1,1 +1,2 @@
+Spullowane - teraz proba wrzucenia
 Cyk txt zeby przetestowach branche bug_fix
