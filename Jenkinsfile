@@ -2,6 +2,11 @@ pipeline {
   agent any
   stages {
     stage("build"){
+      when {
+        expression {
+          env.BRANCH_NAME != 'dev' && env.BRANCH_NAME != 'bug_fix'
+        }
+      }
       steps {
         echo 'building the aplication....'
       }
