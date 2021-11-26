@@ -1,8 +1,14 @@
 pipeline {
   agent any
+  
   environment {
     NEW_VERSION = '1.1.0'
   }
+  parameters {
+    booleanParam (name: 'executeTests' defaultValue: true, descripton:'Turn on or turn off'
+  }
+  
+  
   stages {
     stage("build"){
       when {
@@ -17,6 +23,11 @@ pipeline {
       
     }
     stage("test"){
+      when{
+        expression {
+          executeTests == false
+        }
+      }
       steps {
         echo 'testing the aplication...'
       }
