@@ -22,6 +22,11 @@ pipeline {
       
     }
     stage("test"){
+      when {
+        expression {
+          executeTest != true
+        }
+      }
       steps {
         echo 'testing the aplication...'
       }
