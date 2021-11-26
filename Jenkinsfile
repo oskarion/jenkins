@@ -30,7 +30,7 @@ pipeline {
       }
       steps {
         echo 'testing the aplication...'
-        echo "executeTests variable = {$params.executeTests}"
+        echo "executeTests variable = ${params.executeTests}"
       }
       
     }
