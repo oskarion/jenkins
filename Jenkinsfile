@@ -8,7 +8,7 @@ pipeline {
     booleanParam (name: 'executeTests', defaultValue: true, descripton:'Turn on or turn off')
   }
   
-  
+
   stages {
     stage("build"){
       when {
@@ -23,11 +23,6 @@ pipeline {
       
     }
     stage("test"){
-      when{
-        expression {
-          executeTests == false
-        }
-      }
       steps {
         echo 'testing the aplication...'
       }
