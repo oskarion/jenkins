@@ -5,7 +5,7 @@ pipeline {
     NEW_VERSION = '1.1.0'
   }
   parameters {
-    booleanParam (name: 'executeTests' defaultValue: true, descripton:'Turn on or turn off'
+    booleanParam (name: 'executeTests', defaultValue: true, descripton:'Turn on or turn off')
   }
   
   
