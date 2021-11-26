@@ -24,7 +24,7 @@ pipeline {
     stage("test"){
       when {
         expression {
-          executeTest != true
+          executeTests != true
         }
       }
       steps {
