@@ -35,10 +35,10 @@ pipeline {
       
     }
     stage("deploy"){
-      steps {
         when {
-          environment(name: "NEW_VERSION", value: "1.1.0")
+            environment(name: "NEW_VERSION", value: "1.1.0")
         }
+      steps {
         echo 'deployin the aplication...'
       }
       
