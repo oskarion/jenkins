@@ -3,7 +3,7 @@ pipeline {
   
   environment {
     NEW_VERSION = '1.1.0'
-    NEW_ENV = 'new_env'
+    NEW_ENV = 'new_env_value'
   }  
   
   parameters {
