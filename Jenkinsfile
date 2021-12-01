@@ -3,10 +3,14 @@ pipeline {
   
   environment {
     NEW_VERSION = '1.1.0'
+    NEW_ENV = 'new_env_value'
+
   }  
   
   parameters {
     booleanParam(name: 'executeTests', defaultValue: true, description:'')
+    string(name: 'string_check', defaultValue: 'checked', description:'')
+
   }
 
   stages {
@@ -19,6 +23,8 @@ pipeline {
       steps {
         echo 'building the aplication....'
         echo "building version ${env.NEW_VERSION}"
+        echo "value of NEW_ENV environemntal variable is ${env.NEW_ENV}"
+
       }
       
     }
@@ -36,7 +42,9 @@ pipeline {
     }
     stage("deploy"){
         when {
-           environment(name: "NEW_VERSION", value: "1.1.0")
+          expression {
+           environment(name: "NEW_VERSION", value: "1.1.0") && params.string_check == 'checked'
+          }
         }
       steps {
         echo 'deployin the aplication...'

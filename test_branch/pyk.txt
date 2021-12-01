@@ -1,0 +1,2 @@
+dodanie pliku z branchy bug fix
+zmiana pliku z branchy bug-fix
