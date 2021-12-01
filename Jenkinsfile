@@ -38,7 +38,9 @@ pipeline {
     }
     stage("deploy"){
         when {
+          expression {
            environment(name: "NEW_VERSION", value: "1.1.0") && params.string_check == 'checked'
+          }
         }
       steps {
         echo 'deployin the aplication...'
