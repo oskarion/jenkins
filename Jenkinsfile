@@ -4,23 +4,27 @@ pipeline {
   environment {
     NEW_VERSION = '1.1.0'
     NEW_ENV = 'new_env_value'
+
   }  
   
   parameters {
     booleanParam(name: 'executeTests', defaultValue: true, description:'')
     string(name: 'string_check', defaultValue: 'checked', description:'')
+
   }
 
   stages {
     stage("build"){
       when {
         expression {
-          env.BRANCH_NAME == 'bug_fix'
+          env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'bug_fix'
         }
       }
       steps {
         echo 'building the aplication....'
+        echo "building version ${env.NEW_VERSION}"
         echo "value of NEW_ENV environemntal variable is ${env.NEW_ENV}"
+
       }
       
     }
